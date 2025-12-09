@@ -5,10 +5,7 @@ import Header from "./components/Header/Header";
 function Home() {
   return (
     <>
-    <div className="container-header-nav">
       <Header /> 
-      <Navbar /> 
-    </div>
       <Footer />
     </>
   );
