@@ -1,30 +1,15 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useIsMobile from "../../hooks/useIsMobile";
 import { HiMenu, HiX } from "react-icons/hi";
 import "./Header.css";
 
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth < breakpoint : false
-  );
 
-  useEffect(() => {
-    function onResize() {
-      setIsMobile(window.innerWidth < breakpoint);
-    }
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [breakpoint]);
-
-  return isMobile;
-}
 
 export default function Header() {
-  const isMobile = useIsMobile(768);       // true si on est sur petit écran
+  const isMobile = useIsMobile(768);       
   const [menuOpen, setMenuOpen] = useState(false); // état du menu mobile
   const location = useLocation();
-  console.log(location.pathname)
   // fermer le menu quand on change de route
   useEffect(() => {
     setMenuOpen(false);

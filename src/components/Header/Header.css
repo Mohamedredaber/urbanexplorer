@@ -50,6 +50,11 @@
   transition: transform .25s ease;
 }
 .brand:hover .logo { transform: translateY(-3px) rotate(-6deg); }
+.brand-text{
+  display: flex ;
+  flex-direction: column;
+  gap: 2px;
+}
 
 .brand-text .title { font-size: 1.15rem; font-weight: 700; line-height: 1; }
 .brand-text .subtitle { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }

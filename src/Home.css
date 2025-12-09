@@ -11,9 +11,6 @@
 }
 *{box-sizing:border-box}
 
-body{
-	height: 800px;
-}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -70,8 +67,8 @@ table {
   top: 0;
   z-index: 1000;
 }
+
 @media(max-width: 768px){
-	
 	.container-header-nav{
 		display: flex;
 		flex-direction: column;
