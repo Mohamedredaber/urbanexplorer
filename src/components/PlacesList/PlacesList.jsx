@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
 import "./PlacesList.css"
-
-function PlacesList({placesimport}) {
+import PlacesListe from '../../data/Places.json'
+function PlacesList() {
   const [places,setplaces]=useState([])
   useEffect(()=>{
-    setplaces(placesimport)
+    const setp = ()=>{
+      setplaces(PlacesListe)
+    }
+    setp()
   },[])
   return (
     <div >
-      <h2>Liste des lieux</h2>
+
+      <h2>Découvrez des lieux</h2>
+        
       <ul>
         {places.map((place) => (
           <li key={place.id}>
