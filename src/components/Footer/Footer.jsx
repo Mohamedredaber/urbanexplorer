@@ -9,14 +9,13 @@ function Footer() {
         <div class="footer-container">
           <div class="footer-branding">
             <a href="/" class="brand">
-              <div class="logo">M</div>
+              <div class="logo">ux</div>
               <div class="brand-text">
-                <span class="title">MonSite</span>
+                <span class="title">Urban explorer</span>
                 <span class="subtitle">Découvrez les meilleurs lieux</span>
               </div>
             </a>
           </div>
-
             {!isMobile && 
           <div class="footer-links">
             <h3>Liens rapides</h3>

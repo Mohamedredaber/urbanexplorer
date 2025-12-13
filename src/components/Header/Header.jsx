@@ -3,17 +3,16 @@ import { useEffect, useState } from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 import { HiMenu, HiX } from "react-icons/hi";
 import "./Header.css";
-
-
-
 export default function Header() {
   const isMobile = useIsMobile(768);       
   const [menuOpen, setMenuOpen] = useState(false); // état du menu mobile
   const location = useLocation();
   // fermer le menu quand on change de route
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
+useEffect(() => {
+  const closeMenu = () => setMenuOpen(false);
+  closeMenu();
+}, [location.pathname]);
+
 
   const toggleMenu = () => setMenuOpen((v) => !v);
 
@@ -27,8 +26,6 @@ export default function Header() {
             <span className="subtitle">Découvre ta ville</span>
           </div>
         </Link>
-
-        {/* bouton hamburger visible seulement en mobile */}
         {isMobile && (
           <button
             className="menu-toggle"
@@ -48,7 +45,6 @@ export default function Header() {
         >
           <NavLink to="/" end className="nav-link">Accueil</NavLink>
           <NavLink to="/lieux" className="nav-link">Lieux</NavLink>
-          <NavLink to="/map" className="nav-link">Carte</NavLink>
           <NavLink to="/about" className="nav-link">À propos</NavLink>
         </nav>
       </div>
