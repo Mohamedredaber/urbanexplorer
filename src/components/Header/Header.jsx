@@ -36,7 +36,7 @@ useEffect(() => {
             {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
         )}
-
+        
         {/* navigation : visible toujours en desktop, conditionnelle en mobile */}
         <nav
           className={`nav ${isMobile ? "mobile" : "desktop"} ${menuOpen ? "open" : ""}`}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import "./PlacesList.css"
 import PlacesListe from '../../data/Places.json'
+import FormFilter from "../Filter/FormFilter"
 function PlacesList() {
   const [places,setplaces]=useState([])
   useEffect(()=>{
@@ -11,8 +12,8 @@ function PlacesList() {
   },[])
   return (
     <div >
-
-      <h2>Découvrez des lieux</h2>
+        <FormFilter/>
+      <h2>Découvre  z des lieux</h2>
         
       <ul>
         {places.map((place) => (
