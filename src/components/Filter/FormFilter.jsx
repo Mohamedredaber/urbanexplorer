@@ -4,6 +4,7 @@ import ProgressBarDistance from "./progressdistanceFilter/ProgressBarDistance";
 import Rateminimal from "./rate/Rateminimal";
 import SerchTag from "./searchTag/serchTag";
 import "./FormFilter.css";
+
 import ResetBtn from "./resetbtn/ResetBtn";
 function FormFilter() {
   const [filterActive, setFilterActive] = useState(false);

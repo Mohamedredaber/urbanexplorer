@@ -1,31 +1,16 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import "./PlacesList.css"
 import PlacesListe from '../../data/Places.json'
+import ListePlaces from "../Filter/listeplaces/ListePlaces"
 import FormFilter from "../Filter/FormFilter"
 function PlacesList() {
-  const [places,setplaces]=useState([])
-  useEffect(()=>{
-    const setp = ()=>{
-      setplaces(PlacesListe)
-    }
-    setp()
-  },[])
+
   return (
     <div >
         <FormFilter/>
-      <h2>Découvre  z des lieux</h2>
+        <ListePlaces/>
+  
         
-      <ul>
-        {places.map((place) => (
-          <li key={place.id}>
-            <strong>{place.name}</strong> <br />
-            Catégorie : {place.category} <br />
-            Coordonnées : {place.coords.lat}, {place.coords.lng} <br />
-            Description : {place.description} <br />
-            Rating : {place.rating} ⭐
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }
