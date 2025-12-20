@@ -2,10 +2,10 @@ import { Route,Routes } from "react-router-dom";
 import "./App.css";
 
 import Layout from "./components/Layout/Layout";
-import Home from "./components/Home/Home";
-import NotFound from './components/NotFound/NotFound.jsx'
-import PlacesList from "./components/PlacesList/PlacesList.jsx";
-import About from "./components/About/About.jsx";
+import Home from "./pages/Home/Home.jsx";
+import NotFound from './pages/NotFound/NotFound.jsx'
+import About from "./pages/About/About.jsx";
+import PlacesList from "./pages/PlacesList/PlacesList.jsx"
 function App() {
   return (
     <>
