@@ -3,7 +3,7 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Home from './pages/Home/Home.jsx'
 import NotFound from './pages/NotFound/NotFound.jsx'
-import Explore from "./pages/PlacesPage/Explore.jsx";
+import ExplorePage from "./pages/explorepage/ExplorePage.jsx";
 import About from './pages/About/About.jsx'
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore" element={<ExplorePage />} />
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="*" element={<NotFound />} />
