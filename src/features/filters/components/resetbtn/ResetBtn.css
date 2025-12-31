@@ -1,0 +1,33 @@
+/* actions buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.btn-reset {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #667eea;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+}
+
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+  }
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Filters() {
+function NotFound() {
   return (
     <div>
-      
+
     </div>
   )
 }
 
-export default Filters
+export default NotFound

@@ -1,0 +1,14 @@
+[
+  { "id" : 1, "value": "all", "label": "Toutes" },
+  { "id" : 2,"value": "restaurant", "label": "Restaurant" },
+  { "id" : 3,"value": "cafe", "label": "Café" },
+  {"id" : 4, "value": "bar", "label": "Bar" },
+  { "id" : 5,"value": "hotel", "label": "Hôtel" },
+  { "id" : 6,"value": "park", "label": "Parc" },
+  { "id" : 7,"value": "museum", "label": "Musée" },
+  { "id" : 8,"value": "shopping_mall", "label": "Centre commercial" },
+  {"id" : 9, "value": "supermarket", "label": "Supermarché" },
+  { "id" : 10,"value": "tourist_attraction", "label": "Point touristique" },
+  { "id" : 11,"value": "beach", "label": "Plage" },
+  {"id" : 12, "value": "cinema", "label": "Cinéma" }
+]

@@ -1,0 +1,43 @@
+:root {
+  --color-primary: #2f855a;
+  --color-accent: #f6ad55;
+  --color-bg: #ffffff;
+  --color-surface: #f7fafc;
+  --color-text: #1a202c;
+  --radius: 10px;
+  --gap: 0.5rem;
+  --input-height: 2.5rem;
+  --input-padding: 0.5rem 1rem;
+}
+
+.search-tag {
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: 1rem;
+  border-radius: var(--radius);
+  width: 100%;
+
+}
+
+.search-tag label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.search-tag input {
+  height: var(--input-height);
+  padding: var(--input-padding);
+  border: 1px solid #cbd5e0;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-tag input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(47, 133, 90, 0.2);
+}
+

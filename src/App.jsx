@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import MapOptimized from './components/MapOptimized';
-
-export default function App() {
-  const [tag, setTag] = useState('amenity=cafe');
-
+import { Route,Routes } from "react-router-dom";
+import "./App.css";
+import Layout from "./components/Layout/Layout";
+import Home from './pages/Home/Home.jsx'
+import NotFound from './pages/NotFound/NotFound.jsx'
+import ExplorePage from "./pages/explorepage/ExplorePage.jsx";
+import About from './pages/About/About.jsx'
+function App() {
   return (
-    <div style={{height: '100vh', display:'flex', flexDirection:'column'}}>
-      <header style={{padding: '10px', background:'#222', color:'#fff'}}>
-        <h2 style={{margin:0}}>Overpass Maroc — Exemple</h2>
-        <div style={{marginTop:8}}>
-          <label style={{marginRight:8}}>Tag (ex: amenity=cafe) :</label>
-          <input value={tag} onChange={e => setTag(e.target.value)} style={{padding:6}} />
-        </div>
-      </header>
-
-      <main style={{flex:1}}>
-        <MapOptimized tag={tag} />
-      </main>
-    </div>
+    <>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
+
+export default App;
