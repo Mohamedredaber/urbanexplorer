@@ -1,0 +1,131 @@
+.home {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/src/assets/images/landingpage.png");
+  background-size: cover;        
+  background-position: center;     
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-overlay {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* carte du form */
+.home-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 35px;
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* textes */
+.home-form h1 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.home-form p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* inputs */
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input:focus {
+  border-color: #667eea;
+}
+
+/* filtres */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.select {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* bouton */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+.rating.is-active {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .home-form {
+    padding: 30px 25px;
+    border-radius: 20px;
+  }
+
+  .home-form h1 {
+    font-size: 22px;
+  }
+
+  .home-form p {
+    font-size: 14px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-form {
+    padding: 25px 20px;
+  }
+
+  .home-form h1 {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

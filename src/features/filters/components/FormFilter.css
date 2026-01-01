@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #2f855a;
+  --color-accent: #f6ad55;
+  --color-bg: #ffffff;
+  --color-surface: #f7fafc;
+  --color-text: #1a202c;
+  --radius: 10px;
+  --gap: 1rem;
+}
+
+.form-filter-container {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  gap: var(--gap);
+  margin: 1rem 0;
+}
+
+.filter-toggle-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+  transition: background-color 0.3s;
+}
+
+.filter-toggle-btn:hover {
+  background-color: #276749; /* nuance plus foncée */
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background-color: var(--color-surface);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
