@@ -14,7 +14,7 @@ export default function PlacesList() {
   return (
     <div>
       {list.map(place => (
-        <div key={place.id}>
+        <div key={place.id} className="content-container">
           <h3>{place.name}</h3>
           <p>⭐ {place.rating}</p>
           <img src={place.image} width="200" alt={place.name} />

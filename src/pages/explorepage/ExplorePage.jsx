@@ -4,6 +4,7 @@ import "./ExplorePage.css"
 function ExplorePage() {
   return (
     <div className="explore-page">
+
       <ApplyFilters/>
       <div style={{ display: "flex", gap: "20px" }}>
         <PlacesList  />
