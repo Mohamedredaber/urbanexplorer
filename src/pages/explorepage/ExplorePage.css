@@ -1,12 +1,12 @@
 /* ExplorePage.css */
-
+/* 
 .explore-page {
   display: flex;
-  min-height: calc(100vh - 120px); /* Ajustez selon votre header/footer */
+  min-height: calc(100vh - 120px); 
   padding: 20px;
   gap: 20px;
-  /* position: relative; */
-}
+
+} */
 .apply-filters {
   position: sticky;       /* reste visible lors du scroll */
   top: 100px;             /* ajuster selon hauteur header */
@@ -200,4 +200,100 @@
     padding: 10px 16px;
     font-size: 0.9rem;
   }
+}
+
+
+
+/* ExplorePage.css */
+.explore-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filters select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.user-info {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.place-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.place-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.like-btn, .favorite-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.like-btn {
+  background: #e8f4fd;
+  color: #3498db;
+}
+
+.like-btn.liked {
+  background: #3498db;
+  color: white;
+}
+
+.favorite-btn {
+  background: #fdedec;
+  color: #e74c3c;
+}
+
+.favorite-btn.favorited {
+  background: #e74c3c;
+  color: white;
+}
+
+.auth-required {
+  color: #6c757d;
+  font-style: italic;
 }

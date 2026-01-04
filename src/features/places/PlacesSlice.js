@@ -1,33 +1,36 @@
-import {createSlice , createAsyncThunk } from '@reduxjs/toolkit'
-import { fetchPlaces } from './PlacesApi'
-export const  loadPlaces  =createAsyncThunk(
-  'places/load',
-  async({term ,lat , lng})=>{
-    return await fetchPlaces(term, lat ,lng)
-  }
-)
-const initialState ={
-   list: [],
-    status: "idle",
-    error: null,
-}
+// features/places/placesSlice.js
+import { createSlice } from '@reduxjs/toolkit';
+import { loadPlaces, savePlaces } from './placesStorage';
+const initialState = {
+  places: loadPlaces(),
+  filteredPlaces: loadPlaces(),
+  filters: {
+    city: 'all',
+    category: 'all',
+    minRating: 0,
+    maxDistance: 50
+  },
+  loading: false,
+  error: null
+};
 const placesSlice = createSlice({
-  name :"places",
-  initialState ,
-  reducers  :{},
-  extraReducers :builder =>{
-    builder
-      .addCase(loadPlaces.pending , state=>{
-        state.status = 'looding'
-      })
-      .addCase(loadPlaces.fulfilled ,(state,action)=>{
-        state.status ='succeeded' ;
-        state.list = action.payload
-      })
-      .addCase(loadPlaces.rejected , (state,action)=>{
-        state.status ='failed';
-        state.error = action.error.message
-      })
+  name: 'places',
+  initialState,
+  reducers: {
+    setPlaces: (state, action) => {
+      state.places = action.payload;
+      savePlaces(action.payload);
+    },
+    setFilter: (state, action) => {
+      const { key, value } = action.payload;
+      state.filters[key] = value;
+    },
+    resetFilters: (state) => {
+      state.filters = initialState.filters;
+      state.filteredPlaces = state.places;
+    }
   }
-})
-export default placesSlice.reducer
+});
+
+export const { setPlaces, setFilter, resetFilters } = placesSlice.actions;
+export default placesSlice.reducer;
