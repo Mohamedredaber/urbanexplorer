@@ -15,7 +15,7 @@ function HeroBg() {
             Discover cafés, restaurants, parks, hotels, and attractions tailored
             to your preferences
           </p>
-          <form>
+          {/* <form>
             <SerchTag />
             <div className="filters">
               <CategoryFilter />
@@ -26,8 +26,7 @@ function HeroBg() {
               <Btmviewonmap/>
               <ResetBtn/>
             </div>
-
-          </form>
+          </form> */}
         </div>
       </div>
     </section>

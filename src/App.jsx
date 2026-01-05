@@ -14,6 +14,12 @@ import UserRoute from "./approutes/UserRoute";
 import EntrepriseRoute from "./approutes/EntrepriseRoute";
 import Register from "./pages/register/Register";
 import MapPage from "./pages/mappage/MapPage";
+import Users from "./features/admin/components/Users";
+import Places from "./features/admin/components/Places";
+import Settings from "./features/admin/components/Settings";
+import AddPlace from "./features/admin/components/AddPlace";
+import AddUser from "./features/admin/components/AddUser";
+import Dashboard from "./features/admin/components/Dashboard";
 function App() {
   return (
     <Routes>
@@ -22,20 +28,35 @@ function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
-         <Route path="/map" element={<MapPage />} />
+        <Route path="/map" element={<MapPage />} />
         <Route path="/login" element={<Login />} />
-           <Route element={<ProtectedRoute />}>
+
+        <Route element={<ProtectedRoute />}>
           <Route element={<UserRoute />}>
             <Route path="/user" element={<UserDashboard />} />
           </Route>
+
           <Route element={<EntrepriseRoute />}>
             <Route path="/entreprise" element={<EntrepriseDashboard />} />
           </Route>
+
           <Route element={<AdminRoute />}>
-            <Route path="/admin" element={<AdminDashboard />} />
+      
+            <Route element={<AdminRoute />}>
+              <Route path="/admin" element={<AdminDashboard />}>
+                <Route index element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="users" element={<Users />} />
+                <Route path="users/add" element={<AddUser />} />
+                <Route path="places" element={<Places />} />
+                <Route path="places/add" element={<AddPlace />} />
+                <Route path="settings" element={<Settings />} />
+              </Route>
+            </Route>
           </Route>
         </Route>
       </Route>
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

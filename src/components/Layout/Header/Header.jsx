@@ -1,14 +1,16 @@
-// Header.jsx - AJOUTER CE CODE
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useIsMobile from "../../../hooks/useIsMobile";
 import { HiMenu, HiX } from "react-icons/hi";
 import storage from "../../../utils/localStorage";
 import "./Header.css";
+
 function Header() {
   const isMobile = useIsMobile(768);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -17,23 +19,27 @@ function Header() {
       setIsAuth(storage.isAuthenticated());
       setUser(storage.getCurrentUser());
     };
+
     checkAuth();
-    const closeMenu = () => setMenuOpen(false);
-    closeMenu();
+    function setmenu() {
+      setMenuOpen(false);
+    }
+    setmenu();
   }, [location.pathname]);
 
   const handleLogout = () => {
     storage.logout();
     setIsAuth(false);
     setUser(null);
-    window.location.href = "/";
+    navigate("/", { replace: true });
   };
 
-  const toggleMenu = () => setMenuOpen((v) => !v);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <header className="header">
       <div className="container">
+        {/* Brand */}
         <Link to="/" className="brand" aria-label="Urban Explorer - Accueil">
           <div className="logo" aria-hidden="true">
             UE
@@ -44,6 +50,7 @@ function Header() {
           </div>
         </Link>
 
+        {/* Mobile toggle */}
         {isMobile && (
           <button
             className="menu-toggle"
@@ -55,6 +62,7 @@ function Header() {
           </button>
         )}
 
+        {/* Navigation */}
         <nav
           className={`nav ${isMobile ? "mobile" : "desktop"} ${
             menuOpen ? "open" : ""
@@ -65,24 +73,31 @@ function Header() {
           <NavLink to="/" end className="nav-link">
             Home
           </NavLink>
+
           <NavLink to="/explore" className="nav-link">
             Explore
           </NavLink>
+
           <NavLink to="/about" className="nav-link">
             About
           </NavLink>
+
           <div className="auth-section">
             {isAuth ? (
               <div className="user-menu">
-                <span className="user-name">{user?.name}</span>
-                <span className={`role-badge role-${user?.role}`}>
-                  {user?.role === "admin"  }
-                  {user?.role === "entreprise" }
-                  {user?.role === "user" }
-                </span>
+                <div className="user-info">
+                  <span className="user-name">{user?.name}</span>
+                  <span className={`role-badge role-${user?.role}`}>
+                    {user?.role === "admin" && "Admin"}
+                    {user?.role === "entreprise" && "Entreprise"}
+                    {user?.role === "user" && "Utilisateur"}
+                  </span>
+                </div>
+
                 <Link to={`/${user?.role}`} className="nav-link dashboard-link">
                   Dashboard
                 </Link>
+
                 <button onClick={handleLogout} className="logout-btn">
                   Déconnexion
                 </button>

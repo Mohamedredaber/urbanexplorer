@@ -5,39 +5,39 @@ function Footer() {
   const isMobile = useIsMobile(768);
   return (
     <>
-      <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-branding">
-            <a href="/" class="brand">
-              <div class="logo">ux</div>
-              <div class="brand-text">
-                <span class="title">Urban explorer</span>
-                <span class="subtitle">Découvrez les meilleurs lieux</span>
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-branding">
+            <a href="/" className="brand">
+              <div className="logo">ux</div>
+              <div className="brand-text">
+                <span className="title">Urban explorer</span>
+                <span className="subtitle">Découvrez les meilleurs lieux</span>
               </div>
             </a>
           </div>
           {!isMobile && (
-            <div class="footer-links">
+            <div className="footer-links">
               <h3>Liens rapides</h3>
               <ul>
                 <li>
-                  <NavLink to="/" end className="nav-link">
+                  <NavLink to="/" end classNameName="nav-link">
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/explore" className="nav-link">
+                  <NavLink to="/explore" classNameName="nav-link">
                     Explore
                   </NavLink>
                 </li>
                 <li>
-                  {/* <NavLink to="/map" className="nav-link">
+                  {/* <NavLink to="/map" classNameName="nav-link">
                       Card
                   </NavLink> */}
                 </li>
                 <li>
                   {" "}
-                  <NavLink to="/about" className="nav-link">
+                  <NavLink to="/about" classNameName="nav-link">
                       About
                   </NavLink>
                 </li>
@@ -46,7 +46,7 @@ function Footer() {
           )}
         </div>
 
-        <div class="footer-bottom">
+        <div className="footer-bottom">
           <p>© 2025 MonSite. Tous droits réservés.</p>
         </div>
       </footer>
