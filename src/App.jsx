@@ -13,6 +13,7 @@ import AdminRoute from "./approutes/AdminRoute";
 import UserRoute from "./approutes/UserRoute";
 import EntrepriseRoute from "./approutes/EntrepriseRoute";
 import Register from "./pages/register/Register";
+import MapPage from "./pages/mappage/MapPage";
 function App() {
   return (
     <Routes>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/map" element={<MapPage />} />
         <Route path="/login" element={<Login />} />
            <Route element={<ProtectedRoute />}>
           <Route element={<UserRoute />}>

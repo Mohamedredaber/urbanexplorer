@@ -152,8 +152,6 @@ const PlaceCard = ({ place, viewMode = 'grid' }) => {
             </div>
           )}
         </div>
-
-        {/* Actions */}
         <div className="place-card-actions">
           <button 
             onClick={handleViewOnMap}
