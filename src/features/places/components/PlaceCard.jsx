@@ -1,4 +1,3 @@
-// PlaceCard.jsx
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -83,7 +82,6 @@ const PlaceCard = ({ place, viewMode = 'grid' }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image ajoutée avec des classes */}
       <div className="place-image-container">
         <img 
           src={place.image} 
